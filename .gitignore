@@ -1,0 +1,12 @@
+/build/
+/.vs/
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.exe
+*.out
+*.app
