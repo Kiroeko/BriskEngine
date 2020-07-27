@@ -2,8 +2,8 @@
 #include <regex>
 #include <algorithm>
 #include <filesystem>
-#include "file_utils.h"
-#include "string_utils.h"
+#include "core/utils/file_utils.h"
+#include "core/utils/string_utils.h"
 
 using namespace std;
 using namespace std::filesystem;

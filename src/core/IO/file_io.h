@@ -2,7 +2,7 @@
 #define _FILE_IO_H_
 
 #include <string>
-#include "singleton.h"
+#include "core/utils/singleton.h"
 namespace CppToolBox {
 
 class FileIO : public Singleton<FileIO>{

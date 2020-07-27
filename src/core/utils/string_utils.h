@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "singleton.h"
+#include "core/utils/singleton.h"
 namespace CppToolBox {
 
 class StringUtils : public Singleton<StringUtils> {

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "singleton.h"
+#include "core/utils/singleton.h"
 namespace CppToolBox {
 
 constexpr uint32_t FILE_FIND_MODE_IS_DIR = 0b1;
