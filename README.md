@@ -37,13 +37,30 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 # Architecture
 ```
 .
-├── doc <- Manual and API reference for developer.
-├── sample <- Example and Demos.
-├── source <- Here is code of BriskEngine.
-│   ├── include <- The header files of BriskEngine API.
-│   └── src
-│       ├── core <- Common coss-platform C++ construction.
-│       └── graphic
-│           └── NativeWindow <- Providor of the game window.
-└── tool
+├─framework           <- Here is the source code of BriskEngine.
+│  ├─audio
+│  ├─common           <- Common cross-platform C++ construction.
+│  │  ├─interface
+│  │  └─utils
+│  ├─event
+│  ├─game_obj
+│  ├─graphic
+│  │  └─render
+│  ├─IO
+│  │  ├─file
+│  │  └─network
+│  ├─platform
+│  │  ├─native_application
+│  │  │  ├─linux
+│  │  │  ├─mac_osx
+│  │  │  └─windows
+│  │  └─native_window <- Providor of the game window.
+│  └─ui
+├─include             <- The header files of BriskEngine API.
+├─lib
+├─src                 <- Developer-side sources.
+└─tool
+    └─build           <-Scripts for build system.
+        ├─linux
+        └─windows
 ```

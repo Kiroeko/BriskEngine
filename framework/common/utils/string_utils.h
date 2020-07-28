@@ -3,10 +3,10 @@
 
 #include <vector>
 #include <string>
-#include "core/utils/singleton.h"
-namespace CppToolBox {
+#include "common/interface/singleton.h"
+namespace BriskEngine {
 
-class StringUtils : public Singleton<StringUtils> {
+class StringUtils : implements Singleton<StringUtils> {
 public:
 	void toUpper(std::string &str);
 	void toLower(std::string &str);

@@ -1,10 +1,10 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include "core/IO/file_io.h"
+#include "IO/file/file_io.h"
 
 using namespace std;
-using namespace CppToolBox;
+using namespace BriskEngine;
 
 bool FileIO::writeStrToFile(const string& str, const string& pathName){
 	stringstream ss;

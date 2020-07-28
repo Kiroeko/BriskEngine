@@ -1,9 +1,11 @@
 #ifndef _SINGLETON_H_
 #define _SINGLETON_H_
-namespace CppToolBox {
+
+#include "common/interface/interface.h"
+namespace BriskEngine {
 
 template <typename T>
-class Singleton
+Interface Singleton
 {
 public:
     ~Singleton() {}

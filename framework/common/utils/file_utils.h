@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <string>
-#include "core/utils/singleton.h"
-namespace CppToolBox {
+#include "common/interface/singleton.h"
+namespace BriskEngine {
 
 constexpr uint32_t FILE_FIND_MODE_IS_DIR = 0b1;
 constexpr uint32_t FILE_FIND_MODE_IGNORE_UPPER_OR_LOWER = 0b10;
@@ -12,7 +12,7 @@ constexpr uint32_t FILE_FIND_MODE_FULL_MATCH = 0b100;
 constexpr uint32_t FILE_FIND_MODE_USE_REGEX = 0b1000;
 constexpr uint32_t FILE_FIND_MODE_RECURSION = 0b10000;
 
-class FileUtils : public Singleton<FileUtils> {
+class FileUtils : implements Singleton<FileUtils> {
 public:
 	std::vector<std::string> findFileInDirPath(const std::string& findKeyName, const std::string &findDirPath, uint32_t findMode);
 	bool isLegalDir(const std::string &path);

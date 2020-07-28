@@ -1,7 +1,7 @@
-#include "core/utils/string_utils.h"
+#include "common/utils/string_utils.h"
 
 using namespace std;
-using namespace CppToolBox;
+using namespace BriskEngine;
 
 void StringUtils::toUpper(string &str)
 {
