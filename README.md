@@ -18,11 +18,12 @@ In the future, in order to support more platforms, we are considering adding oth
 
 The table below shows the details of the platform to which BriskEngine applies:
 
-| Graphic API | Supports Platform     | Developer-side IDE |      Progress      |
-|:-----------:|:----------------------|:-------------------|:------------------:|
-|  Direct12   | Windows               | VC++               | On going now       |
-|   Vulkan    | Windows/linux/Android | VC++ / LLVM+Clang  | Under construction |
-|   Mental    | Mac OS/iOS            | XCode              | Under construction |
+| Graphic API | Supports Platform            b    | Developer-side IDE        |      Progress      |
+|:-----------:|:----------------------------------|:--------------------------|:------------------:|
+|  Direct12   | Windows                           | VC++                      | On going now       |
+|   OpenGl    | Windows/linux/Android/Mac OS/iOS  | VC++ / LLVM+Clang / Xcode | Under construction |
+|   Vulkan    | Windows/linux/Android             | VC++ / LLVM+Clang         | Under construction |
+|   Mental    | Mac OS/iOS                        | XCode                     | Under construction |
 
 # Installation
 BriskEngine is not a header-only C++ library. Just use the tools we provide from the outermost `Tool` folder to simply deploy your development environment.
@@ -52,7 +53,7 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 │  ├─platform
 │  │  ├─native_application
 │  │  │  ├─linux
-│  │  │  ├─mac_osx
+│  │  │  ├─mac_os
 │  │  │  └─windows
 │  │  └─native_window <- Providor of the game window.
 │  └─ui

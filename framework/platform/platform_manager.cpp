@@ -10,8 +10,8 @@ namespace BriskEngine {
 	LinuxApplication g_App;
 	BaseApplication* g_pApp = &g_App;
 #endif
-#ifdef TARGET_PLATFORM_TYPE_MACOSX
-	MacOSXApplication g_App;
+#ifdef TARGET_PLATFORM_TYPE_MACOS
+	MacOSApplication g_App;
 	BaseApplication* g_pApp = &g_App;
 #endif
 
