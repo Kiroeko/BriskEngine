@@ -26,7 +26,7 @@ The table below shows the details of the platform to which BriskEngine applies:
 |   Mental    | Mac OS/iOS                        | XCode                     | Under construction |
 
 # Installation
-BriskEngine is not a header-only C++ library. Just use the tools we provide from the outermost `Tool` folder to simply deploy your development environment.
+BriskEngine is not a header-only C++ library. Just use the tools we provide from the outermost `tool` folder to simply deploy your development environment.
 
 # Licences
 Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also uses following software as its dependencies:
@@ -38,30 +38,33 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 # Architecture
 ```
 .
-├─framework           <- Here is the source code of BriskEngine.
+├─framework                <- Here is the source code of BriskEngine.
 │  ├─audio
-│  ├─common           <- Common cross-platform C++ construction.
+│  ├─common                <- Common cross-platform C++ construction.
 │  │  ├─interface
 │  │  └─utils
 │  ├─event
 │  ├─game_obj
 │  ├─graphic
-│  │  └─render
+│  │  └─renderer
 │  ├─IO
 │  │  ├─file
 │  │  └─network
+│  ├─physic
 │  ├─platform
 │  │  ├─native_application
 │  │  │  ├─linux
 │  │  │  ├─mac_os
 │  │  │  └─windows
-│  │  └─native_window <- Providor of the game window.
+│  │  └─native_window      <- Providor of the game window.
 │  └─ui
-├─include             <- The header files of BriskEngine API.
+├─include                  <- The header files of BriskEngine API.
 ├─lib
-├─src                 <- Developer-side sources.
+├─src                      <- Developer-side sources.
 └─tool
-    └─build           <-Scripts for build system.
+    └─build                <-Scripts for build system.
         ├─linux
+        │  └─vulkan
         └─windows
+            └─dx12
 ```
