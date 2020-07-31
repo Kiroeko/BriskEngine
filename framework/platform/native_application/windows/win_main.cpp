@@ -1,6 +1,11 @@
 #include "cmake_val.h"
 #ifdef TARGET_PLATFORM_TYPE_WINDOWS
 
+#ifndef UNICODE
+#define UNICODE
+#endif 
+
+#include <windows.h>
 #include "common/interface/base_application.h"
 
 using namespace BriskEngine;
@@ -9,16 +14,83 @@ namespace BriskEngine {
     extern BaseApplication *g_pApp;
 }
 
-int main(int argc, char *argv[]) {
-    if (g_pApp && !g_pApp->Initialize())
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
+{
+    // Register the window class.
+    const wchar_t CLASS_NAME[]  = L"BriskGameEngineWindowClass";
+    
+    WNDCLASS wc = { };
+    wc.lpfnWndProc   = WindowProc;
+    wc.hInstance     = hInstance;
+    wc.lpszClassName = CLASS_NAME;
+    RegisterClass(&wc);
+
+    // Create the window.
+    HWND hwnd = CreateWindowEx(
+        0,                              // Optional window styles.
+        CLASS_NAME,                     // Window class
+        L"Brisk Engine",    // Window text
+        WS_OVERLAPPEDWINDOW,            // Window style
+
+        // Size and position
+        CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+
+        NULL,       // Parent window    
+        NULL,       // Menu
+        hInstance,  // Instance handle
+        NULL        // Additional application data
+        );
+
+    if (hwnd == NULL)
         return 0;
+    
+    ShowWindow(hwnd, nCmdShow);
 
-    //Main Loop
-    while (!g_pApp->isNeedExit())
-        g_pApp->Update();
+    // Run the message loop.
+    MSG msg = {};
+    while (GetMessage(&msg, NULL, 0, 0)){
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
 
-    g_pApp->Finalize();
     return 0;
 }
+
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    switch (uMsg)
+    {
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        return 0;
+
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hwnd, &ps);
+
+        FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
+
+        EndPaint(hwnd, &ps);
+    }
+    return 0;
+
+    }
+    return DefWindowProc(hwnd, uMsg, wParam, lParam);
+}
+
+
+ //int main(int argc, char *argv[]) {
+ //    if (g_pApp && !g_pApp->Initialize())
+ //        return 0;
+
+ //    //Main Loop
+ //    while (!g_pApp->isNeedExit())
+ //        g_pApp->Update();
+
+ //    g_pApp->Finalize();
+ //    return 0;
+ //}
 
 #endif

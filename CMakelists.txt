@@ -29,7 +29,11 @@ file(GLOB_RECURSE DIR_SRCS
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
 )
 
-add_executable(${PROJECT_NAME} ${DIR_SRCS})
+if(TARGET_PLATFORM_TYPE_WINDOWS)
+    add_executable(${PROJECT_NAME} WIN32 ${DIR_SRCS})
+else()
+    add_executable(${PROJECT_NAME} ${DIR_SRCS})
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     "${PROJECT_SOURCE_DIR}/include"
