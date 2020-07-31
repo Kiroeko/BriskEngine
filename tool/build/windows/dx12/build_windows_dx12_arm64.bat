@@ -1,6 +1,6 @@
 @echo off
 
-cd ../../..
+cd ../../../..
 if exist build (
 	del /f /s /q build\*.*
 	rd /s /q build

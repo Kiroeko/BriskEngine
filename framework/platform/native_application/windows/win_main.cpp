@@ -1,3 +1,6 @@
+#include "cmake_val.h"
+#ifdef TARGET_PLATFORM_TYPE_WINDOWS
+
 #include "common/interface/base_application.h"
 
 using namespace BriskEngine;
@@ -17,3 +20,5 @@ int main(int argc, char *argv[]) {
     g_pApp->Finalize();
     return 0;
 }
+
+#endif

@@ -5,12 +5,10 @@ namespace BriskEngine {
 #ifdef TARGET_PLATFORM_TYPE_WINDOWS
 	WinApplication g_App;
 	BaseApplication* g_pApp = &g_App;
-#endif
-#ifdef TARGET_PLATFORM_TYPE_LINUX
+#elif defined TARGET_PLATFORM_TYPE_LINUX
 	LinuxApplication g_App;
 	BaseApplication* g_pApp = &g_App;
-#endif
-#ifdef TARGET_PLATFORM_TYPE_MACOS
+#elif defined TARGET_PLATFORM_TYPE_MACOS
 	MacOSApplication g_App;
 	BaseApplication* g_pApp = &g_App;
 #endif
