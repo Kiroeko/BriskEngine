@@ -52,11 +52,10 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 │  │  └─network
 │  ├─physic
 │  ├─platform
-│  │  ├─native_application
-│  │  │  ├─linux
-│  │  │  ├─mac_os
-│  │  │  └─windows
-│  │  └─native_window      <- Providor of the game window.
+│  │  └─native_application <- Provides the native game window.
+│  │     ├─linux
+│  │     ├─mac_os
+│  │     └─windows   
 │  └─ui
 ├─include                  <- The header files of BriskEngine API.
 ├─lib
