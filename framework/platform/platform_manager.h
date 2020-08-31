@@ -22,7 +22,6 @@ enum class ENUM_GRAPIC_API_TYPE:unsigned{
 class PlatformManager : implements Singleton<PlatformManager>
 {
 public:
-	void Initialize();
 	inline ENUM_TARGET_PLATFORM_TYPE getPlatformType() { return m_ePlatformType; }
 	inline ENUM_GRAPIC_API_TYPE      getGraphicType() { return m_eGraphicType; }
 private:

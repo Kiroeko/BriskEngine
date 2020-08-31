@@ -9,7 +9,7 @@ public:
 	virtual ~RuntimeModule() {};
 	virtual bool Initialize() = 0;
 	virtual void Finalize() = 0;
-	virtual void Update() = 0;
+	virtual void Tick() = 0;
 };
 
 }
