@@ -14,14 +14,14 @@ namespace BriskEngine {
 }
 
 LRESULT CALLBACK WindowProc(HWND hwnd,
-    UINT uMsg,
-    WPARAM wParam,
-    LPARAM lParam);
+                            UINT uMsg,
+                            WPARAM wParam,
+                            LPARAM lParam);
 
 int WINAPI wWinMain(HINSTANCE hInstance,
-    HINSTANCE,
-    PWSTR pCmdLine,
-    int nCmdShow)
+                    HINSTANCE,
+                    PWSTR pCmdLine,
+                    int nCmdShow)
 {
     // Register the window class.
     const wchar_t CLASS_NAME[] = L"Brisk Engine";
@@ -73,9 +73,9 @@ int WINAPI wWinMain(HINSTANCE hInstance,
 }
 
 LRESULT CALLBACK WindowProc(HWND hwnd,
-    UINT uMsg,
-    WPARAM wParam,
-    LPARAM lParam)
+                            UINT uMsg,
+                            WPARAM wParam,
+                            LPARAM lParam)
 {
     switch (uMsg)
     {

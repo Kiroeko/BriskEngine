@@ -18,7 +18,7 @@ In the future, in order to support more platforms, we are considering adding oth
 
 The table below shows the details of the platform to which BriskEngine applies:
 
-| Graphic API | Supports Platform            b    | Developer-side IDE        |      Progress      |
+| Graphic API | Supports Platform                 | Developer-side IDE        |      Progress      |
 |:-----------:|:----------------------------------|:--------------------------|:------------------:|
 |  Direct12   | Windows                           | VC++                      | On going now       |
 |   OpenGl    | Windows/linux/Android/Mac OS/iOS  | VC++ / LLVM+Clang / Xcode | Under construction |
