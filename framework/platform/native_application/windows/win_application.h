@@ -6,6 +6,7 @@ namespace BriskEngine{
 
 class WinApplication : public BaseApplication{
     public:
+		bool Initialize() override;
 		void Finalize() override;
 		void Tick() override;
 };

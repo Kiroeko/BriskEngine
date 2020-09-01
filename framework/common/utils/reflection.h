@@ -1,4 +1,3 @@
-#include <string>
 #include <type_traits>
 
 #define GEN_MEMBER_FUNC_CHECK_CLASS(func_identifier, func_return_type, func_name, ...) \
