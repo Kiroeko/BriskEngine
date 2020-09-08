@@ -11,6 +11,9 @@ public:
 	void toUpper(std::string &str);
 	void toLower(std::string &str);
 	std::vector<std::string> split(const std::string &str, const std::string &delimiter);
+
+	std::string ws2s(const std::wstring& ws);
+	std::wstring s2ws(const std::string& s);
 };
 
 }

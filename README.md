@@ -61,7 +61,7 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 ├─lib
 ├─src                      <- Developer-side sources.
 └─tool
-    └─build                <-Scripts for build system.
+    └─build                <- Scripts for build system.
         ├─linux
         │  └─vulkan
         └─windows
