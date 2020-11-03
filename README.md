@@ -12,18 +12,13 @@ BriskEngine provides the following features:
 - Develop your game using pure C++.
 
 # Compatibility
-Now BriskEngine is only support for Windows, but it was designed with cross-platform abilities by implementing the different abstract of window provider and renderer.
-
-In the future, in order to support more platforms, we are considering adding other graphic API such as Vulkan or Mental.
+The BriskEngine is only support for Windows, but it was designed with cross-platform abilities by implementing the different abstract of window provider and renderer.
 
 The table below shows the details of the platform to which BriskEngine applies:
 
 | Graphic API | Supports Platform                 | Developer-side IDE        |      Progress      |
 |:-----------:|:----------------------------------|:--------------------------|:------------------:|
 |  Direct12   | Windows                           | VC++                      | On going now       |
-|   OpenGl    | Windows/linux/Android/Mac OS/iOS  | VC++ / LLVM+Clang / Xcode | Under construction |
-|   Vulkan    | Windows/linux/Android             | VC++ / LLVM+Clang         | Under construction |
-|   Mental    | Mac OS/iOS                        | XCode                     | Under construction |
 
 # Installation
 BriskEngine is not a header-only C++ library. Just use the tools we provide from the outermost `tool` folder to simply deploy your development environment.
@@ -37,33 +32,26 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 
 # Architecture
 ```
-.
-├─framework                <- Here is the source code of BriskEngine.
-│  ├─audio
-│  ├─common                <- Common cross-platform C++ construction.
-│  │  ├─interface
-│  │  └─utils
-│  ├─event
-│  ├─game_obj
-│  ├─graphic
-│  │  └─renderer
-│  ├─IO
-│  │  ├─file
-│  │  └─network
-│  ├─physic
-│  ├─platform
-│  │  └─native_application <- Provides the native game window.
-│  │     ├─linux
-│  │     ├─mac_os
-│  │     └─windows   
-│  └─ui
-├─include                  <- The header files of BriskEngine API.
-├─lib
-├─src                      <- Developer-side sources.
-└─tool
-    └─build                <- Scripts for build system.
-        ├─linux
-        │  └─vulkan
-        └─windows
-            └─dx12
+.	
+├── CMakelists.txt
+├── LICENSE
+├── README.md
+├── cmake_val.cfg
+├── framework                           <- Here is the source code of BriskEngine.
+│   ├── IO
+│   ├── audio
+│   ├── common                        <- Common cross-platform C++ construction.
+│   ├── event
+│   ├── game_obj
+│   ├── graphic
+│   │   └── renderer                   <- DX12 API is used here.
+│   ├── physic
+│   ├── platform
+│   │   └── native_application    <- Provides the native game window.
+│   └── ui
+├── include                               <- The header files of BriskEngine API.
+├── lib
+├── src                                      <- Developer-side sources.
+└── tool
+    └── build                              <- Scripts for build system.
 ```

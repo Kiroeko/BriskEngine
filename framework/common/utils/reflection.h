@@ -1,6 +1,9 @@
+#ifndef _REFLECTION_H_
+#define _REFLECTION_H_
+
 #include <type_traits>
 
-#define GEN_MEMBER_FUNC_CHECK_CLASS(func_identifier, func_return_type, func_name, ...) \
+#define GEN_MEMBERFUNC_CHECK_CLASS(func_identifier, func_return_type, func_name, ...) \
     struct HasMemberFuncInspector_##func_identifier##_##func_return_type##_##func_name{ \
         template < \
             typename T, \
@@ -28,3 +31,5 @@
     }; \
     template <typename T> \
     struct HasMember_##member_type##_##member_name : public decltype(HasMemberInspector_##member_type##_##member_name::Check<T>(0)){};
+
+#endif

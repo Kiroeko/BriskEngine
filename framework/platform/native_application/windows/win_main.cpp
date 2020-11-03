@@ -3,11 +3,14 @@
 
 #ifndef UNICODE
 #define UNICODE
-#endif 
+#endif
+#ifndef _UNICODE
+#define _UNICODE
+#endif
 
 #include <windows.h>
-#include "common/interface/base_application.h"
-#include "common/interface/base_renderer.h"
+#include "platform/native_application/base_application.h"
+#include "graphic/renderer/base_renderer.h"
 
 using namespace BriskEngine;
 namespace BriskEngine {
@@ -26,26 +29,26 @@ int WINAPI wWinMain(HINSTANCE hInstance,
                     int nCmdShow)
 {
     // Register the window class.
-    const wchar_t CLASS_NAME[] = L"Brisk Engine";
-    WNDCLASS wc = {};
-    wc.lpfnWndProc   = WindowProc;
-    wc.hInstance     = hInstance;
-    wc.lpszClassName = CLASS_NAME;
+    const wchar_t CLASS_NAME[] = L"Brisk Engine Class";
+    WNDCLASS wc                = {};
+    wc.lpfnWndProc             = WindowProc;
+    wc.hInstance               = hInstance;
+    wc.lpszClassName           = CLASS_NAME;
     RegisterClass(&wc);
 
     // Create the window.
     HWND hwnd = CreateWindowEx(
         0,                                // Optional window styles.
         CLASS_NAME,                       // Window class
-        L"Brisk Engine",                  // Window text
-        WS_OVERLAPPEDWINDOW,              // Window style
+        L"Brisk Engine Game",             // Window text
+        WS_BORDER,                        // Window style
 
         // Size and position
         CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
-        NULL,       // Parent window    
-        NULL,       // Menu
-        hInstance,  // Instance handle
-        NULL        // Additional application data
+        NULL,                             // Parent window    
+        NULL,                             // Menu
+        hInstance,                        // Instance handle
+        NULL                              // Additional application data
     );
     if (hwnd == NULL)
         return 0;
@@ -75,6 +78,8 @@ int WINAPI wWinMain(HINSTANCE hInstance,
 
     g_pApp->Finalize();
     g_pRenderer->Finalize();
+    DestroyWindow(hwnd);
+
     return (int)msg.wParam;
 }
 

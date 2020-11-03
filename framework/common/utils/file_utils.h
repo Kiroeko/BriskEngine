@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "common/interface/singleton.h"
+#include "common/utils/singleton.h"
 namespace BriskEngine {
 
 constexpr uint32_t FILE_FIND_MODE_IS_DIR = 0b1;

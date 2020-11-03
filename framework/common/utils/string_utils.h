@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "common/interface/singleton.h"
+#include "common/utils/singleton.h"
 namespace BriskEngine {
 
 class StringUtils : implements Singleton<StringUtils> {

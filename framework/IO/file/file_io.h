@@ -2,7 +2,7 @@
 #define _FILE_IO_H_
 
 #include <string>
-#include "common/interface/singleton.h"
+#include "common/utils/singleton.h"
 namespace BriskEngine {
 
 class FileIO : implements Singleton<FileIO>{
