@@ -90,9 +90,11 @@ LRESULT CALLBACK WindowProc(HWND hwnd,
 {
     switch (uMsg)
     {
+    case WM_CLOSE:
+        return 0;
     case WM_DESTROY:
         PostQuitMessage(0);
-        break;
+        return 0;
     default:
         return DefWindowProc(hwnd, uMsg, wParam, lParam);
     }
