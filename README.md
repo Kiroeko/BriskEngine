@@ -37,21 +37,21 @@ Basically, BriskEngine uses the MIT license. At the same time, BriskEngine also 
 ├── LICENSE
 ├── README.md
 ├── cmake_val.cfg
-├── framework                           <- Here is the source code of BriskEngine.
+├── framework                     <- Here is the source code of BriskEngine.
 │   ├── IO
 │   ├── audio
-│   ├── common                        <- Common cross-platform C++ construction.
+│   ├── common                    <- Common cross-platform C++ construction.
 │   ├── event
 │   ├── game_obj
 │   ├── graphic
-│   │   └── renderer                   <- DX12 API is used here.
+│   │   └── renderer              <- DX12 API is used here.
 │   ├── physic
 │   ├── platform
 │   │   └── native_application    <- Provides the native game window.
 │   └── ui
-├── include                               <- The header files of BriskEngine API.
+├── include                       <- The header files of BriskEngine API.
 ├── lib
-├── src                                      <- Developer-side sources.
+├── src                           <- Developer-side sources.
 └── tool
-    └── build                              <- Scripts for build system.
+    └── build                     <- Scripts for build system.
 ```
