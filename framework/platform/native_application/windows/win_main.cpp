@@ -40,7 +40,7 @@ int WINAPI wWinMain(HINSTANCE hInstance,
     HWND hwnd = CreateWindowEx(
         0,                                // Optional window styles.
         CLASS_NAME,                       // Window class
-        L"Brisk Engine Game",             // Window text
+        TEXT(PROJECT_NAME),               // Window text
         WS_BORDER,                        // Window style
 
         // Size and position
