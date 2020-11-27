@@ -7,7 +7,7 @@ if exist build (
 )
 md build
 
-call cmake -S . -B ./build -G "Visual Studio 16 2019" -A x64 -T host=x64 -D TARGET_PLATFORM_TYPE_WINDOWS="Windows" -D GRAPHIC_API_TYPE_DX12="DX12"
+call cmake -S . -B ./build -G "Visual Studio 16 2019" -A x64 -D TARGET_PLATFORM_TYPE_WINDOWS="Windows" -D GRAPHIC_API_TYPE_DX12="DX12"
 call cmake --open ./build
 
 pause
