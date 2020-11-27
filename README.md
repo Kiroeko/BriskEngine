@@ -18,7 +18,7 @@ The table below shows the details of the platform to which BriskEngine applies:
 
 | Graphic API | Supports Platform                 | Developer-side IDE        |      Progress      |
 |:-----------:|:----------------------------------|:--------------------------|:------------------:|
-|  Direct12   | Windows                           | VC++                      | On going now       |
+|   Direct12  | Windows                           | VC++                      |    On going now    |
 
 # Installation
 BriskEngine is not a header-only C++ library. Just use the tools we provide from the outermost `tool` folder to simply deploy your development environment.
