@@ -7,17 +7,9 @@ namespace BriskEngine{
 Interface BaseApplication : implements RuntimeModule
 {
 public:
-	virtual bool Initialize() {
-		m_bQuit = false;
-		return true;
-	}
+	virtual bool Initialize() {}
 	virtual void Finalize() {}
 	virtual void Tick() {}
-	virtual bool IsQuit() {
-		return m_bQuit;
-	}
-protected:
-	bool m_bQuit = false;
 };
 
 }

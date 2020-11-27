@@ -29,7 +29,7 @@ int WINAPI wWinMain(HINSTANCE hInstance,
                     int nCmdShow)
 {
     // Register the window class.
-    const wchar_t CLASS_NAME[] = L"Brisk Engine Class";
+    const wchar_t CLASS_NAME[] = TEXT(PROJECT_NAME);
     WNDCLASS wc                = {};
     wc.lpfnWndProc             = WindowProc;
     wc.hInstance               = hInstance;
@@ -50,21 +50,19 @@ int WINAPI wWinMain(HINSTANCE hInstance,
         hInstance,                        // Instance handle
         NULL                              // Additional application data
     );
+
     if (hwnd == NULL)
         return 0;
-
     if (!g_pApp->Initialize())
         return 0;
-
     if (!g_pRenderer->Initialize())
         return 0;
 
     ShowWindow(hwnd, nCmdShow);
-
     // Run the message loop.
     MSG msg = {};
-    while (!g_pApp->IsQuit()) {
-        bool bGotMsg = (PeekMessage(&msg, NULL, 0u, 0u, PM_REMOVE) != 0);
+    while (true) {
+        BOOL bGotMsg = PeekMessage(&msg, NULL, 0u, 0u, PM_REMOVE);
         if (bGotMsg) {
             if (msg.message == WM_QUIT)
                 break;
@@ -76,10 +74,8 @@ int WINAPI wWinMain(HINSTANCE hInstance,
         }
     }
 
-    g_pApp->Finalize();
     g_pRenderer->Finalize();
-    DestroyWindow(hwnd);
-
+    g_pApp->Finalize();
     return (int)msg.wParam;
 }
 
@@ -90,8 +86,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd,
 {
     switch (uMsg)
     {
-    case WM_CLOSE:
-        return 0;
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;

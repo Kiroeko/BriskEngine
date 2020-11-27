@@ -3,7 +3,7 @@
 using namespace BriskEngine;
 
 bool WinApplication::Initialize() {
-	m_bQuit = false;
+	
 	return true;
 }
 
